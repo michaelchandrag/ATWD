@@ -1,5 +1,5 @@
 # ATWD
-Aplikasi CodeIgniter untuk memberi data cuacu mengenai sebuah kota dalam periode hari ini sampai dengan 5 hari kedepan.
+Aplikasi CodeIgniter untuk memberi data cuaca mengenai sebuah kota dalam periode hari ini sampai dengan 5 hari kedepan.
 API yang digunakan : metaweather, google map reverse geocoding
 
 Fitur-fitur yang terdapat pada aplikasi ini:
