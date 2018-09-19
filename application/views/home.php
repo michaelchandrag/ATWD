@@ -260,7 +260,7 @@
 	</script>
 </head>
 <body>
-	<div class="top-content">
+	<div class="top-content" style="background-image:url('<?php echo base_url('bg.png');?>');">
 		<div class="inner-bg">
 			<div class="container">
 				<div class="center">

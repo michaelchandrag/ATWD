@@ -25,8 +25,8 @@
 			padding: 8px;
 		}
 
-		#table tr:nth-child(even){background-color: #f2f2f2;}
-
+		#table tr:nth-child(even){background-color: #f2f2f2;color:black;}
+		#table tr:nth-child(odd){color:black;}
 		#table tr:hover {background-color: #ddd;}
 
 		#table th {
@@ -48,7 +48,7 @@
 	<script src="<?php echo base_url('assetForHome/js/jquery.backstretch.min.js') ?>" ></script>
 	<script src="<?php echo base_url('assetForHome/js/scripts.js') ?>"></script>
 </head>
-<body>
+<body style="background-image:url('<?php echo base_url('bg.png')?>')">
 	<div class="center">
 	<p style="text-align:center;">
 		<a href="<?php echo site_url('home');?>">Dashboard</a> - 
