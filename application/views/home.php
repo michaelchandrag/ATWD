@@ -135,6 +135,7 @@
 						
 						$('.cityTitle').on('click', function(){
 							var woeid = $(this).attr('id');
+							var city = $(this).attr('text');
 							$.ajax({
 							  type: "POST",
 							  url: "home/detail",
@@ -142,16 +143,18 @@
 							  dataType:"json",
 							  success: function (response) {
 								  $("#show").empty();
+								  var city = response.title;
 								  var consolidated_weather = response.consolidated_weather;
 								  var index = 0;
 								  console.log(consolidated_weather);
 								  $.each(consolidated_weather, function(idx, response_cw){
 									  var description = '';
-									  description += '<b style="font-size:14px;">Date : '+response_cw.applicable_date+'</b><br>';
-									  description += '<b style="font-size:14px;">'+response_cw.weather_state_name+'</b><br>';
-									  description += '<b>Temp : </b>'+parseInt(response_cw.the_temp,10)+' / '+response_cw.max_temp+'<br>';
-									  description += '<b>Humidity : </b>'+response_cw.humidity+'<br>';
-									  description += '<b>Wind Speed : </b>'+parseInt(response_cw.wind_speed,10)+'Mph<br>';
+									  description += '<b style="color:white;"><u>'+city+'</u></b><br>';
+									  description += '<b style="font-size:14px;color:yellow;">Date : '+response_cw.applicable_date+'</b><br>';
+									  description += '<b style="font-size:14px;color:yellow;">'+response_cw.weather_state_name+'</b><br>';
+									  description += '<b style="color:yellow;">Temp : '+parseInt(response_cw.the_temp,10)+' / '+parseInt(response_cw.max_temp,10)+'</b><br>';
+									  description += '<b style="color:yellow;">Humidity : '+response_cw.humidity+'</b><br>';
+									  description += '<b style="color:yellow;">Wind Speed : '+parseInt(response_cw.wind_speed,10)+'Mph</b><br>';
 									  if(index==0)
 										$("#show").append('<div class="mainWeather" style="width:100%;height:30%;float:left;"><p style="float: left;"><img style="margin-left:60%;" src="https://www.metaweather.com//static/img/weather/png/'+response_cw.weather_state_abbr+'.png" height="90%" width="30%"></p><p style="font-size:12px;">'+description+'</p></div><hr>');
 									  else
@@ -196,16 +199,18 @@
 		  success: function (response) {
 			  $("#show").empty();
 			  console.log(response);
+			  var city = response.title;
 			  var consolidated_weather = response.consolidated_weather;
 			  var index = 0;
 			  console.log(consolidated_weather);
 			  $.each(consolidated_weather, function(idx, response_cw){
 				  var description = '';
-				  description += '<b style="font-size:14px;">Date : '+response_cw.applicable_date+'</b><br>';
-				  description += '<b style="font-size:14px;">'+response_cw.weather_state_name+'</b><br>';
-				  description += '<b>Temp : </b>'+parseInt(response_cw.the_temp,10)+' / '+response_cw.max_temp+'<br>';
-				  description += '<b>Humidity : </b>'+response_cw.humidity+'<br>';
-				  description += '<b>Wind Speed : </b>'+parseInt(response_cw.wind_speed,10)+'Mph<br>';
+				  description += '<b style="color:white;"><u>'+city+'</u></b><br>';
+				  description += '<b style="font-size:14px;color:yellow;">Date : '+response_cw.applicable_date+'</b><br>';
+				  description += '<b style="font-size:14px;color:yellow;">'+response_cw.weather_state_name+'</b><br>';
+				  description += '<b style="color:yellow;">Temp : '+parseInt(response_cw.the_temp,10)+' / '+parseInt(response_cw.max_temp,10)+'</b><br>';
+				  description += '<b style="color:yellow;">Humidity : '+response_cw.humidity+'</b><br>';
+				  description += '<b style="color:yellow;">Wind Speed : '+parseInt(response_cw.wind_speed,10)+'Mph</b><br>';
 				  if(index==0)
 					$("#show").append('<div class="mainWeather" style="width:100%;height:30%;float:left;"><p style="float: left;"><img style="margin-left:60%;" src="https://www.metaweather.com//static/img/weather/png/'+response_cw.weather_state_abbr+'.png" height="90%" width="30%"></p><p style="font-size:12px;">'+description+'</p></div><hr>');
 				  else
